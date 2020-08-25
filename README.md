@@ -15,7 +15,11 @@ Use it for:
 - Upcoming appointments
 - Quote collection
 
-Demo: https://victoria-lo.github.io/bulletin-board
+And many more, be creative with it!
+
+<img src = "./src/image1.PNG">
+
+#### Demo: https://victoria-lo.github.io/bulletin-board
 
 ### Technologies Used
 
