@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Draggable from "react-draggable";
+import { v4 as uuidv4 } from "uuid";
 var randomColor = require("randomcolor");
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const newitem = () => {
     if (item.trim() !== "") {
       const newitem = {
+        id: uuidv4(),
         item: item,
         color: randomColor({
           luminosity: "light",
@@ -43,10 +45,8 @@ function App() {
     setItems(newArr);
   };
 
-  const deleteNote = (index) => {
-    let newArr = [...items];
-    newArr.splice(index, 1);
-    setItems(newArr);
+  const deleteNote = (id) => {
+    setItems(items.filter((item) => item.id !== id));
   };
 
   return (
@@ -63,14 +63,15 @@ function App() {
       {items.map((item, index) => {
         return (
           <Draggable
+            key={item.id}
             defaultPosition={item.defaultPos}
             onStop={(e, data) => {
               updatePos(data, index);
             }}
           >
-            <div style={{ "background-color": item.color }} className="box">
+            <div style={{ backgroundColor: item.color }} className="box">
               {`${item.item}`}
-              <button id="delete" onClick={(e) => deleteNote(index)}>
+              <button id="delete" onClick={(e) => deleteNote(item.id)}>
                 X
               </button>
             </div>
