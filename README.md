@@ -22,7 +22,8 @@ And many more, be creative with it!
 ### How I Built It
 - https://lo-victoria.com/lets-build-a-simple-bulletin-board-react-app
 
-#### Demo: https://victoria-lo.github.io/bulletin-board
+### Demo
+- https://victoria-lo.github.io/bulletin-board
 
 ### Technologies Used
 
