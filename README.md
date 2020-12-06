@@ -15,13 +15,9 @@ Use it for:
 - Upcoming appointments
 - Quote collection
 
-And many more, be creative with it!
+#### Demo: https://atefbb.github.io/bulletin-board/
 
-<img src = "./src/image1.PNG">
-
-#### Demo: https://victoria-lo.github.io/bulletin-board
-
-### Technologies Used
+### Technologies
 
 - [Create React App](https://github.com/facebook/create-react-app).
 - [react-draggable](https://github.com/STRML/react-draggable/)
