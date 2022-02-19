@@ -60,24 +60,26 @@ function App() {
         />
         <button onClick={newitem}>ENTER</button>
       </div>
-      {items.map((item, index) => {
-        return (
-          <Draggable
-            key={item.id}
-            defaultPosition={item.defaultPos}
-            onStop={(e, data) => {
-              updatePos(data, index);
-            }}
-          >
-            <div style={{ backgroundColor: item.color }} className="box">
-              {`${item.item}`}
-              <button id="delete" onClick={(e) => deleteNote(item.id)}>
-                X
-              </button>
-            </div>
-          </Draggable>
-        );
-      })}
+      <div id="items">
+        {items.map((item, index) => {
+          return (
+            <Draggable
+              key={item.id}
+              defaultPosition={item.defaultPos}
+              onStop={(e, data) => {
+                updatePos(data, index);
+              }}
+            >
+              <div style={{ backgroundColor: item.color }} className="box">
+                <p style={{ margin: 0 }}>{item.item}</p>
+                <button id="delete" onClick={(e) => deleteNote(item.id)}>
+                  X
+                </button>
+              </div>
+            </Draggable>
+          );
+        })}
+      </div>
     </div>
   );
 }
